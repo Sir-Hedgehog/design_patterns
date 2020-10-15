@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
+ * @version 3.0
  * @since 15.10.2020
  */
 
@@ -21,24 +21,24 @@ public class HeroStart {
 
     @Test
     public void checkSalvationOfHero() {
-        Hero achilles = new Hero();
-        achilles.setActivity(new Salvation());
-        achilles.takeAction();
-        assertThat(achilles.takeAction(), is("Save the desperate people!"));
+        Hero hercules = new Hero();
+        hercules.setActivity(new Salvation());
+        hercules.takeAction();
+        assertThat(hercules.takeAction(), is("Save the desperate people!"));
     }
 
     @Test
     public void checkFightOfHero() {
-        Hero achilles = new Hero();
-        achilles.setActivity(new Fight());
-        achilles.takeAction();
-        assertThat(achilles.takeAction(), is("Fight against evil!"));
+        Hero jason = new Hero();
+        jason.setActivity(new Fight());
+        jason.takeAction();
+        assertThat(jason.takeAction(), is("Fight against evil!"));
     }
     @Test
     public void checkSleepingOfHero() {
-        Hero achilles = new Hero();
-        achilles.setActivity(new Sleeping());
-        achilles.takeAction();
-        assertThat(achilles.takeAction(), is("Sometimes sleeps..."));
+        Hero perseus = new Hero();
+        perseus.setActivity(new Sleeping());
+        perseus.takeAction();
+        assertThat(perseus.takeAction(), is("Sometimes sleeps..."));
     }
 }

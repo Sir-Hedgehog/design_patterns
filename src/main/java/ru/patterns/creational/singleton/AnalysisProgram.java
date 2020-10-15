@@ -10,7 +10,7 @@ public class AnalysisProgram {
     private static AnalysisProgram analysisProgram;
     private static String analysisFile = "Results of analysis: \n\n";
 
-    public AnalysisProgram() {
+    private AnalysisProgram() {
     }
 
     public static synchronized AnalysisProgram getAnalysisProgram() {

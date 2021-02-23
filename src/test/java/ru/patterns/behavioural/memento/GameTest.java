@@ -1,8 +1,7 @@
 package ru.patterns.behavioural.memento;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -18,19 +17,19 @@ public class GameTest {
 
         game.setSaving("Lvl 1. The attack of monsters", "1.0");
         options.setStorage(game.save());
-        assertThat(game.toString(), is("PcGame:"
+        assertEquals(game.toString(),"PcGame:"
                 + "\nsaveName: Lvl 1. The attack of monsters"
-                + "\nversion: 1.0"));
+                + "\nversion: 1.0");
 
         game.setSaving("Lvl 1. Try to avoid of the attack", "1.1");
-        assertThat(game.toString(), is("PcGame:"
+        assertEquals(game.toString(),"PcGame:"
                 + "\nsaveName: Lvl 1. Try to avoid of the attack"
-                + "\nversion: 1.1"));
-        assertThat(game.getError(), is("System error!!!"));
+                + "\nversion: 1.1");
+        assertEquals(game.getError(),"System error!!!");
 
         game.load(options.getStorage());
-        assertThat(game.toString(), is("PcGame:"
+        assertEquals(game.toString(),"PcGame:"
                 + "\nsaveName: Lvl 1. The attack of monsters"
-                + "\nversion: 1.0"));
+                + "\nversion: 1.0");
     }
 }

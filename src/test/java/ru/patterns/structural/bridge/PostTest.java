@@ -1,8 +1,7 @@
 package ru.patterns.structural.bridge;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -15,12 +14,12 @@ public class PostTest {
     @Test
     public void checkResponsibilitiesOfLeadHrManager() {
         Post post = new Letter(new FootCourier());
-        assertThat(post.getContain(), is("Foot courier delivers post! The letter will be delivered quickly!"));
+        assertEquals(post.getContain(), "Foot courier delivers post! The letter will be delivered quickly!");
     }
 
     @Test
     public void checkResponsibilitiesOfPersonnelOfficer() {
         Post post = new Parcel(new AutoCourier());
-        assertThat(post.getContain(), is("Auto courier drives post! The parcel will be delivered very quickly!"));
+        assertEquals(post.getContain(), "Auto courier drives post! The parcel will be delivered very quickly!");
     }
 }

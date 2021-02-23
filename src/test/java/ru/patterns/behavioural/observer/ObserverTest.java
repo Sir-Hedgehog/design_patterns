@@ -1,8 +1,7 @@
 package ru.patterns.behavioural.observer;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -29,8 +28,8 @@ public class ObserverTest {
         String secondExpected = "Dear " + secondClient.getName()
                 + ",\n we changed items:\n[Credit is 10% per year., Mortgage is 12% per year., Contribution is 7% per year.]"
                 + "\n==========================================\n";
-        assertThat(firstResult, is(firstExpected));
-        assertThat(secondResult, is(secondExpected));
+        assertEquals(firstResult, firstExpected);
+        assertEquals(secondResult, secondExpected);
     }
 
     @Test
@@ -51,7 +50,7 @@ public class ObserverTest {
         String secondExpected = "Dear " + secondClient.getName()
                 + ",\n we changed items:\n[Mortgage is 12% per year.]"
                 + "\n==========================================\n";
-        assertThat(firstResult, is(firstExpected));
-        assertThat(secondResult, is(secondExpected));
+        assertEquals(firstResult, firstExpected);
+        assertEquals(secondResult, secondExpected);
     }
 }

@@ -1,8 +1,7 @@
 package ru.patterns.creational.factory;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -17,7 +16,7 @@ public class FactoryTest {
         FilterOfSpecialty filterOfSpecialty = new FilterOfSpecialty();
         SportsAcademy academy = filterOfSpecialty.filter("football");
         Sportsman sportsman = academy.preparesSportsman();
-        assertThat(sportsman.sport(), is("Football player kicks ball into the goal!"));
+        assertEquals(sportsman.sport(), "Football player kicks ball into the goal!");
     }
 
     @Test
@@ -25,7 +24,7 @@ public class FactoryTest {
         FilterOfSpecialty filterOfSpecialty = new FilterOfSpecialty();
         SportsAcademy academy = filterOfSpecialty.filter("basketball");
         Sportsman sportsman = academy.preparesSportsman();
-        assertThat(sportsman.sport(), is("Basketball player throws ball into the ring!"));
+        assertEquals(sportsman.sport(), "Basketball player throws ball into the ring!");
     }
 
     @Test
@@ -34,7 +33,7 @@ public class FactoryTest {
         try {
             filterOfSpecialty.filter("tennis");
         } catch (RuntimeException expected) {
-            assertThat("Our sports academy doesn't prepare sportsmen of such type", is(expected.getMessage()));
+            assertEquals("Our sports academy doesn't prepare sportsmen of such type", expected.getMessage());
         }
     }
 }

@@ -1,8 +1,7 @@
 package ru.patterns.creational.singleton;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -18,10 +17,10 @@ public class SingletonTest {
         String singlePresent3 = AnalysisProgram.getAnalysisProgram().toString();
         String singlePresent4 = AnalysisProgram.getAnalysisProgram().toString();
         String singlePresent5 = AnalysisProgram.getAnalysisProgram().toString();
-        assertThat(singlePresent1, is(singlePresent2));
-        assertThat(singlePresent2, is(singlePresent3));
-        assertThat(singlePresent3, is(singlePresent4));
-        assertThat(singlePresent4, is(singlePresent5));
+        assertEquals(singlePresent1, singlePresent2);
+        assertEquals(singlePresent2, singlePresent3);
+        assertEquals(singlePresent3, singlePresent4);
+        assertEquals(singlePresent4, singlePresent5);
     }
 
     @Test
@@ -31,6 +30,6 @@ public class SingletonTest {
         AnalysisProgram.getAnalysisProgram().addDataToAnalysisFile("Work time: 131 days 13 hours 7 minutes 14 seconds");
         String result = AnalysisProgram.getAnalysisProgram().showAnalysisFile();
         String expected = "Results of analysis: \n\n" + "Memory cache: 16128Mb\n" + "Stack: 10Mb\n" + "Work time: 131 days 13 hours 7 minutes 14 seconds\n";
-        assertThat(result, is(expected));
+        assertEquals(result, expected);
     }
 }

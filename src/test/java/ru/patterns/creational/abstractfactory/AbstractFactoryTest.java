@@ -3,8 +3,7 @@ package ru.patterns.creational.abstractfactory;
 import org.junit.Test;
 import ru.patterns.creational.abstractfactory.house.HouseTeamFactory;
 import ru.patterns.creational.abstractfactory.road.RoadTeamFactory;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class AbstractFactoryTest {
     @Test
@@ -13,9 +12,9 @@ public class AbstractFactoryTest {
         Architect architect = factory.getArchitect();
         Foreman foreman = factory.getForeman();
         Worker worker = factory.getWorker();
-        assertThat(architect.plan(), is("House architect plans scheme of house!"));
-        assertThat(foreman.giveDirections(), is("House foreman gives directions for builders!"));
-        assertThat(worker.work(), is("House builder builds house!"));
+        assertEquals(architect.plan(), "House architect plans scheme of house!");
+        assertEquals(foreman.giveDirections(),"House foreman gives directions for builders!");
+        assertEquals(worker.work(), "House builder builds house!");
     }
 
     @Test
@@ -24,8 +23,8 @@ public class AbstractFactoryTest {
         Architect architect = factory.getArchitect();
         Foreman foreman = factory.getForeman();
         Worker worker = factory.getWorker();
-        assertThat(architect.plan(), is("Road architect plans scheme of roads!"));
-        assertThat(foreman.giveDirections(), is("Road foreman gives directions for builders!"));
-        assertThat(worker.work(), is("Road builder lays asphalt!"));
+        assertEquals(architect.plan(), "Road architect plans scheme of roads!");
+        assertEquals(foreman.giveDirections(), "Road foreman gives directions for builders!");
+        assertEquals(worker.work(), "Road builder lays asphalt!");
     }
 }

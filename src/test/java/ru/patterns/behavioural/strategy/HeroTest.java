@@ -1,8 +1,7 @@
 package ru.patterns.behavioural.strategy;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -10,13 +9,13 @@ import static org.junit.Assert.assertThat;
  * @since 15.10.2020
  */
 
-public class HeroStart {
+public class HeroTest {
     @Test
     public void checkProtectionOfHero() {
         Hero achilles = new Hero();
         achilles.setActivity(new Protection());
         achilles.takeAction();
-        assertThat(achilles.takeAction(), is("Protects the weak people!"));
+        assertEquals(achilles.takeAction(),"Protects the weak people!");
     }
 
     @Test
@@ -24,7 +23,7 @@ public class HeroStart {
         Hero hercules = new Hero();
         hercules.setActivity(new Salvation());
         hercules.takeAction();
-        assertThat(hercules.takeAction(), is("Save the desperate people!"));
+        assertEquals(hercules.takeAction(), "Save the desperate people!");
     }
 
     @Test
@@ -32,13 +31,13 @@ public class HeroStart {
         Hero jason = new Hero();
         jason.setActivity(new Fight());
         jason.takeAction();
-        assertThat(jason.takeAction(), is("Fight against evil!"));
+        assertEquals(jason.takeAction(),"Fight against evil!");
     }
     @Test
     public void checkSleepingOfHero() {
         Hero perseus = new Hero();
         perseus.setActivity(new Sleeping());
         perseus.takeAction();
-        assertThat(perseus.takeAction(), is("Sometimes sleeps..."));
+        assertEquals(perseus.takeAction(),"Sometimes sleeps...");
     }
 }

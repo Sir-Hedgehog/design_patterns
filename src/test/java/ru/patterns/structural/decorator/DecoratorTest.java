@@ -1,8 +1,7 @@
 package ru.patterns.structural.decorator;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
@@ -14,18 +13,18 @@ public class DecoratorTest {
     @Test
     public void checkResponsibilitiesOfLeadHrManager() {
         HrManager hrManager = new LeadHrManager(new PersonnelOfficer(new Recruiter()));
-        assertThat(hrManager.work(), is("Calls candidates. Keeps workbooks. Interviews. "));
+        assertEquals(hrManager.work(),"Calls candidates. Keeps workbooks. Interviews. ");
     }
 
     @Test
     public void checkResponsibilitiesOfPersonnelOfficer() {
         HrManager hrManager = new PersonnelOfficer(new Recruiter());
-        assertThat(hrManager.work(), is("Calls candidates. Keeps workbooks. "));
+        assertEquals(hrManager.work(),"Calls candidates. Keeps workbooks. ");
     }
 
     @Test
     public void checkResponsibilitiesOfRecruiter() {
         HrManager hrManager = new Recruiter();
-        assertThat(hrManager.work(), is("Calls candidates. "));
+        assertEquals(hrManager.work(),"Calls candidates. ");
     }
 }

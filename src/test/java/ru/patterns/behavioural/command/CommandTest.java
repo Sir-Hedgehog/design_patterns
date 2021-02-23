@@ -1,8 +1,7 @@
 package ru.patterns.behavioural.command;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class CommandTest {
     @Test
@@ -13,8 +12,8 @@ public class CommandTest {
                 new ShootCommand(army),
                 new PumpCommand(army)
         );
-        assertThat(officer.defendOrder(), is("Defend homeland!"));
-        assertThat(officer.shootOrder(), is("Shoot the target!"));
-        assertThat(officer.pumpOrder(), is("Pump muscles!"));
+        assertEquals(officer.defendOrder(),"Defend homeland!");
+        assertEquals(officer.shootOrder(),"Shoot the target!");
+        assertEquals(officer.pumpOrder(),"Pump muscles!");
     }
 }
